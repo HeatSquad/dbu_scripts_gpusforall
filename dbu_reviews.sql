@@ -4,10 +4,10 @@ CREATE TABLE reviews
     productid		VARCHAR(64)		NOT NULL,
     userid		    VARCHAR(64)		NOT NULL,
     text		    VARCHAR(4000),
-    created		    DATETIME,
-    created_by	    VARCHAR(64),
-    modified		DATETIME,
-    modified_by	    VARCHAR(64),
+    created		    DATETIME        NOT NULL,
+    created_by	    VARCHAR(64)     NOT NULL,
+    modified		DATETIME        NOT NULL,
+    modified_by	    VARCHAR(64)     NOT NULL,
     deleted 		VARCHAR(1)		DEFAULT 'N',
     PRIMARY KEY (reviewid)
 );
