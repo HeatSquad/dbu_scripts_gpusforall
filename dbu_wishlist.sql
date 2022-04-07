@@ -3,12 +3,12 @@ CREATE TABLE wishlist
     wishlistid	    VARCHAR(64)	NOT NULL,
     productid		VARCHAR(64)	NOT NULL,
     userid		    VARCHAR(64)	NOT NULL,
-    quantity		INT		        NOT NULL,
-    created		    DATETIME	    NOT NULL,
+    quantity		INT		    NOT NULL,
+    created		    DATETIME	NOT NULL,
     created_by	    VARCHAR(64)	NOT NULL,
-    modified		DATETIME	    NOT NULL,
+    modified		DATETIME	NOT NULL,
     modified_by	    VARCHAR(64)	NOT NULL,
-    deleted		    VARCHAR(1)	    DEFAULT 'N',
+    deleted		    VARCHAR(1)	DEFAULT 'N',
     PRIMARY KEY (wishlistid)
 );
 

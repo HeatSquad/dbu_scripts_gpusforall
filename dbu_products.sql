@@ -3,7 +3,6 @@ CREATE TABLE products
     productid	    VARCHAR(64)	    NOT NULL,
     product_name	VARCHAR(256)	NOT NULL,
     price		    FLOAT	        NOT NULL,
-    imageid		    VARCHAR(128),
     description	    VARCHAR(4000),
     inventory		INT	            DEFAULT 0,
     manufacturer	VARCHAR(256),
