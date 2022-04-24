@@ -14,5 +14,6 @@ CREATE TABLE products
     created_by	    VARCHAR(64),
     modified		DATETIME,
     modified_by	    VARCHAR(64),
-    deleted 		VARCHAR(1)	    DEFAULT 'N'
+    deleted 		VARCHAR(1)	    DEFAULT 'N',
+    PRIMARY KEY (productid)
 );

@@ -19,4 +19,4 @@ CREATE TABLE transactions
 );
 
 ALTER TABLE shoppingcart
-FOREIGN KEY (userid) REFERENCES users(userid);
+ADD FOREIGN KEY (userid) REFERENCES users(userid);
