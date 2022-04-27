@@ -20,7 +20,7 @@ CREATE TABLE users
 -- Triggers
 -- ========================================================
 DELIMITER //
-CREATE TRIGGER sys_users_insert_trigger_1
+CREATE TRIGGER sys_users_trigger_1
 BEFORE INSERT ON users
 FOR EACH ROW 
 BEGIN
@@ -29,7 +29,7 @@ BEGIN
     SET NEW.modified = CURRENT_TIMESTAMP;
 END //
 
-CREATE TRIGGER sys_users_update_trigger_2
+CREATE TRIGGER sys_users_trigger_2
 BEFORE UPDATE ON users
 FOR EACH ROW 
 BEGIN
