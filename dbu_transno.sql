@@ -9,7 +9,7 @@ CREATE TABLE transno
 -- Stored Procedure
 -- ========================================================
 
-ROP PROCEDURE sys_transno_procedure_get_userid
+DROP PROCEDURE sys_transno_procedure_get_userid
 
 DELIMITER //
 
@@ -26,7 +26,8 @@ BEGIN
     SET current_seq = currentseq + 1
     WHERE prefix = pre_fix;
 
-    SELECT CONCAT(prefix, CONVERT(current_seq, CHAR))
+	
+    SELECT CONCAT(prefix, LPAD(CONVERT(current_seq, CHAR) , 5, '0'))
     INTO userid
     FROM transno
     WHERE prefix = pre_fix;
