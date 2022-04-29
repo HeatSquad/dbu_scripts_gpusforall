@@ -13,7 +13,7 @@ CREATE TABLE shoppingcart
 );
 
 ALTER TABLE shoppingcart
-FOREIGN KEY (productid) REFERENCES products(productid);
+ADD FOREIGN KEY (productid) REFERENCES products(productid);
 
 ALTER TABLE shoppingcart
-FOREIGN KEY (userid) REFERENCES users(userid);
+ADD FOREIGN KEY (userid) REFERENCES users(userid);

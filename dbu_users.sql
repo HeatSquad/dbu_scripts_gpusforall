@@ -19,6 +19,8 @@ CREATE TABLE users
 -- ========================================================
 -- Triggers
 -- ========================================================
+DROP TRIGGER sys_users_insert_trigger_1
+
 DELIMITER //
 CREATE TRIGGER sys_users_insert_trigger_1
 BEFORE INSERT ON users
@@ -27,7 +29,12 @@ BEGIN
     SET NEW.password_reset = CURRENT_TIMESTAMP;
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
+    CALL sys_transno_procedure_get_userid('USR', @userid);
+
+	SET NEW.userid = @userid;
 END //
+
+DELIMITER ;
 
 CREATE TRIGGER sys_users_update_trigger_2
 BEFORE UPDATE ON users
