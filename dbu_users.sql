@@ -22,7 +22,7 @@ CREATE TABLE users
 DROP TRIGGER sys_users_insert_trigger_1
 
 DELIMITER //
-CREATE TRIGGER sys_users_insert_trigger_1
+CREATE TRIGGER sys_users_trigger_1
 BEFORE INSERT ON users
 FOR EACH ROW 
 BEGIN
