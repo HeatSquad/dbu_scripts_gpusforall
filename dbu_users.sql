@@ -22,26 +22,23 @@ CREATE TABLE users
 DROP TRIGGER sys_users_insert_trigger_1
 
 DELIMITER //
-CREATE TRIGGER sys_users_trigger_1
+CREATE TRIGGER sys_users_insert_trigger_1
 BEFORE INSERT ON users
 FOR EACH ROW 
 BEGIN
     SET NEW.password_reset = CURRENT_TIMESTAMP;
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
-    CALL sys_transno_procedure_get_userid('USR', @userid);
+    CALL sys_transno_procedure_get_id('USR', @userid);
 
 	SET NEW.userid = @userid;
 END //
 
 DELIMITER ;
 
-CREATE TRIGGER sys_users_update_trigger_2
-BEFORE UPDATE ON users
-FOR EACH ROW 
-BEGIN
-    SET NEW.modified = CURRENT_TIMESTAMP;
-END //
+-- ========================================================
+-- Inserts
+-- ========================================================
+INSERT INTO users (email, first_name, last_name, dob, password, json_address, json_user, modified_by, deleted)
+VALUES ('hello@canyouhearme.com', 'Bill', 'Nye', '1955-11-27', 'password', '{"street":"123 Yorkshire Place", "city":"Portland", "state":"OR", "zip":"90210"}', '{}', 'eugene', 'N');
 
-/* DELIMITER set back to default*/
-DELIMITER ;
