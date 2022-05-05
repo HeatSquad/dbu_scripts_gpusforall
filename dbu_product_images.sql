@@ -2,11 +2,11 @@ CREATE TABLE product_images
 (
     imageid		VARCHAR(64)    NOT NULL,
     productid	VARCHAR(64)	   NOT NULL,
-    image_path	VARCHAR(128),   
-    created		DATETIME,        
-    created_by	VARCHAR(64)   NOT NULL, 
-    modified	DATETIME      NOT NULL,  
-    modified_by	VARCHAR(64)   NOT NULL, 
+    image_path	VARCHAR(128),
+    created		DATETIME,
+    created_by	VARCHAR(64)   NOT NULL,
+    modified	DATETIME      NOT NULL,
+    modified_by	VARCHAR(64)   NOT NULL,
     deleted 	VARCHAR(1)	  DEFAULT 'N'
 )
 
@@ -22,7 +22,7 @@ FOR EACH ROW
 BEGIN
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
-    CALL sys_transno_procedure_get_id('IMG', @imageid);
+    CALL sys_trans_no_procedure_get_id('IMGP', @imageid);
 
 	SET NEW.imageid = @imageid;
 END //

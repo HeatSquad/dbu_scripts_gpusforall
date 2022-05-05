@@ -30,7 +30,7 @@ FOR EACH ROW
 BEGIN
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
-    CALL sys_transno_procedure_get_id('PRO', @productid);
+    CALL sys_trans_no_procedure_get_id('PRO', @productid);
 
 	SET NEW.productid = @productid;
 END //

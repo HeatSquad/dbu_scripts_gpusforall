@@ -31,7 +31,7 @@ FOR EACH ROW
 BEGIN
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
-    CALL sys_transno_procedure_get_id('ORD', @orderid);
+    CALL sys_trans_no_procedure_get_id('ORD', @orderid);
 
 	SET NEW.orderid = @orderid;
 END //

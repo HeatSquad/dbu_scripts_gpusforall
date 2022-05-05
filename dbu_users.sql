@@ -29,7 +29,7 @@ BEGIN
     SET NEW.password_reset = CURRENT_TIMESTAMP;
     SET NEW.created = CURRENT_TIMESTAMP;
     SET NEW.modified = CURRENT_TIMESTAMP;
-    CALL sys_transno_procedure_get_id('USR', @userid);
+    CALL sys_trans_no_procedure_get_id('USR', @userid);
 
 	SET NEW.userid = @userid;
 END //
