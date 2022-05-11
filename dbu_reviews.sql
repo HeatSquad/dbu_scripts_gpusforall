@@ -3,6 +3,7 @@ CREATE TABLE reviews
     reviewid 		VARCHAR(64)		NOT NULL,
     productid		VARCHAR(64)		NOT NULL,
     userid		    VARCHAR(64)		NOT NULL,
+    title           VARCHAR(128)    NOT NULL,
     text		    VARCHAR(4000),
     created		    DATETIME        NOT NULL,
     created_by	    VARCHAR(64)     NOT NULL,
