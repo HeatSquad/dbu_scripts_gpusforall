@@ -57,3 +57,6 @@ VALUES ('CAR', 0, 'cartid for sys.shopping_cart table');
 
 INSERT INTO sys.trans_no (prefix, current_seq, description)
 VALUES ('WSH', 0, 'wishlistid for sys.wish_list table');
+
+INSERT INTO sys.trans_no (prefix, current_seq, description)
+VALUES ('IMGR', 0, 'iamgeid for sys.review_images table');
