@@ -1,9 +1,8 @@
 CREATE TABLE shopping_cart
 (
     cartid		VARCHAR(64)	    NOT NULL,
-    productid	VARCHAR(64)	    NOT NULL,
     userid		VARCHAR(64)	    NOT NULL,
-    quantity	INT		        NOT NULL,
+    cart_items  JSON            NOT NULL DEFAULT '{}',
     created		DATETIME	    NOT NULL,
     created_by	VARCHAR(64)	    NOT NULL,
     modified	DATETIME	    NOT NULL,
@@ -11,9 +10,6 @@ CREATE TABLE shopping_cart
     deleted		VARCHAR(1) 	    DEFAULT 'N',
     PRIMARY KEY (cartid)
 );
-
-ALTER TABLE shopping_cart
-ADD FOREIGN KEY (productid) REFERENCES products(productid);
 
 ALTER TABLE shopping_cart
 ADD FOREIGN KEY (userid) REFERENCES users(userid);
@@ -40,5 +36,5 @@ DELIMITER ;
 -- ========================================================
 -- Inserts
 -- ========================================================
-INSERT INTO sys.shopping_cart (productid, userid, quantity, created_by, modified_by, deleted)
-VALUES ('PRO00001', 'USR00001', 200, 'eugene', 'eugene', 'N');
+INSERT INTO sys.shopping_cart (userid, cart_items, created_by, modified_by, deleted)
+VALUES ('USR00001', '{}', 'eugene', 'eugene', 'N');
